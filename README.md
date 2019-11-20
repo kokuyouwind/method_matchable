@@ -1,5 +1,8 @@
 # MethodMatchable
 
+[![CircleCI](https://circleci.com/gh/kokuyouwind/method_matchable.svg?style=svg)](https://circleci.com/gh/kokuyouwind/method_matchable)
+[![Gem Version](https://badge.fury.io/rb/method_matchable.svg)](https://badge.fury.io/rb/method_matchable)
+
 Match with methods in hash patterns!
 
 ## Installation
