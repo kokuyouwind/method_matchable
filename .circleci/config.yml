@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ruby:2.7.0-preview2
+    steps:
+      - checkout
+
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3
+
+      - run:
+          name: run tests
+          command: |
+            bundle exec rake
