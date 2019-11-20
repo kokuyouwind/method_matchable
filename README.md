@@ -1,8 +1,6 @@
 # MethodMatchable
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/method_matchable`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Match with methods in hash patterns!
 
 ## Installation
 
@@ -22,7 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
+```ruby
+Person = Struct.new(:first_name, :last_name) do
+  include MethodMatchable
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+end
+
+case Person.new('Hotaru', 'Shiragiku')
+in { full_name: name }
+  p name # => 'Hotaru Shiragiku'
+end
+```
 
 ## Development
 
@@ -32,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/method_matchable.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kokuyouwind/method_matchable.
 
 ## License
 
