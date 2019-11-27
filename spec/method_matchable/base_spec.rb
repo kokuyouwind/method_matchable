@@ -24,4 +24,13 @@ RSpec.describe MethodMatchable::Base do
       true
     end
   end
+
+  it 'can match with both super and method valuese' do
+    case { hoge: :fuga, piyo: :piyo }
+    in { hoge: v, size: 2 }
+      expect(v).to eq(:fuga)
+    else
+      fail
+    end
+  end
 end
