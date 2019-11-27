@@ -37,6 +37,17 @@ case Person.new('Hotaru', 'Shiragiku')
 in { full_name: name }
   p name # => 'Hotaru Shiragiku'
 end
+
+# You can use both original keys and method keys
+class Hash
+  prepend MethodMatchable::Base
+end
+
+case { key: :value}
+in { key: v, size: size}
+  p v # => :value
+  p size # => 1
+end
 ```
 
 ## Development
