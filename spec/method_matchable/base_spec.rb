@@ -15,4 +15,13 @@ RSpec.describe MethodMatchable::Base do
       fail
     end
   end
+
+  it 'cannot match with undefined method values' do
+    case Person.new('Hotaru', 'Shiragiku')
+    in { undefined_method: value }
+      fail
+    else
+      true
+    end
+  end
 end
