@@ -1,7 +1,4 @@
-require "method_matchable/version"
+require 'method_matchable/base'
+require 'method_matchable/version'
 
-module MethodMatchable
-  def deconstruct_keys(keys)
-    keys.each_with_object({}) { |k, h| h[k] = send(k) }
-  end
-end
+module MethodMatchable; end

@@ -26,7 +26,7 @@ Or install it yourself as:
 
 ```ruby
 Person = Struct.new(:first_name, :last_name) do
-  include MethodMatchable
+  include MethodMatchable::Base
 
   def full_name
     "#{first_name} #{last_name}"

@@ -1,13 +1,13 @@
-RSpec.describe MethodMatchable do
+RSpec.describe MethodMatchable::Base do
   Person = Struct.new(:first_name, :last_name) do
-    include MethodMatchable
+    include MethodMatchable::Base
 
     def full_name
       "#{first_name} #{last_name}"
     end
   end
 
-  it 'match with methods' do
+  it 'can match with method values' do
     case Person.new('Hotaru', 'Shiragiku')
     in { full_name: name }
       expect(name).to eq('Hotaru Shiragiku')
