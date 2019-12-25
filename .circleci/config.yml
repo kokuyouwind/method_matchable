@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ruby:2.7.0-preview2
+      - image: ruby:2.7.0-rc1
     steps:
       - checkout
 
